@@ -30,7 +30,7 @@ class Patient(BaseModel):
     def transform_name(cls, value):
         return value.upper()
     
-    @field_validator('age', mode='after') #mode=after means value will come after type coercion if wrong type is provided and after is by-default
+    @field_validator('age', mode='after') #mode=after means value will come after type coercion if wrong type is provided and mode='after' is by-default
     @classmethod
     def validate_age(cls, value):
         if 0 < value < 100:
