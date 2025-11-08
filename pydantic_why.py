@@ -10,7 +10,7 @@ class Patient(BaseModel):
     weight: Annotated[float, Field(gt=0, strict=True)]
     married: Annotated[Optional[bool], Field(default=None, description='Is the patient married or not')]
     allergies: Annotated[Optional[List[str]], Field(default=None, max_length=5)]
-    contact_details: Dict[str, str] #it means key and value both are string, we dont use dict here because dict is a built-in function in python and not used for two -level  validation
+    contact_details: Dict[str, str] #it means key and value both are string, we dont use dict here because dict is a built-in function in python and not used for two -level  validation(first is dictionary and second is string in both key and value)
 
 
 def update_patient_data(patient: Patient): #it takes pydantic object as input i.e Patient
