@@ -12,6 +12,7 @@ class Patient(BaseModel):
     allergies: List[str]
     contact_details: Dict[str, str]
 
+    #make sure the fucntion is in the class not outside the class otherwise validation will not work
     @field_validator('email') #it requires field name whose value we want to validate
     @classmethod
     def email_validator(cls, value): #cls is class method, value is field value to be validated
